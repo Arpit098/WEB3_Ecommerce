@@ -5,10 +5,17 @@ import { PiShoppingCart } from "react-icons/pi";
 import { CiWallet } from "react-icons/ci";
 import { TbGridDots } from "react-icons/tb";
 import WalletPopup from "./popup";
-
+import { useContract } from "../Context/ContractContext";
 export default function Navbar() {
 
+  const {connectWallet, wallet} = useContract();
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const connect = async() =>{
+    await connectWallet();
+    console.log(wallet)
+  }
 
   const openPopup = () => {
     setIsPopupOpen(true);
@@ -45,7 +52,7 @@ export default function Navbar() {
 
           <button
             className="flex items-center px-6 py-2 bg-gradient-to-b from-[#182073] to-[#2D3CD9] shadow-[inset_0px_4px_10px_rgba(0,0,0,0.25)] rounded-[24px] text-[#FFFFFF] font-dm-sans font-bold text-[16px] leading-[21px]"
-            onClick={openPopup}
+            onClick={connect}
           >
             <CiWallet className="w-[22px] h-[20px] mr-2" />
             Connect
