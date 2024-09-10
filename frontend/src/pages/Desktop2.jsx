@@ -10,7 +10,7 @@ export default function Desktop2() {
     if (type === "shopping") {
       navigate("/desktop12"); 
     } else if (type === "business") {
-      
+      navigate("/desktop11"); 
     }
   };
   return (
@@ -32,7 +32,7 @@ export default function Desktop2() {
             {/* Buttons */}
             <button
               onClick={() => handleAccountTypeSelection("shopping")}
-              className=" py-3 border border-indigo-800 rounded-lg flex items-center justify-center space-x-3 hover:bg-indigo-50 w-96 h-12" 
+              className=" py-3 border border-indigo-800 rounded-lg flex items-center justify-center space-x-3 hover:bg-indigo-50 w-96 h-12"
             >
               {/* Shopping Icon */}
               <TiShoppingCart className="text-[#1A237E] text-xl  transition-transform duration-200  " />
@@ -41,7 +41,10 @@ export default function Desktop2() {
               </span>
             </button>
 
-            <button className="w-full py-3 bg-gradient-to-r from-indigo-800 to-indigo-600 rounded-lg flex items-center justify-center space-x-3 text-white">
+            <button
+              onClick={() => handleAccountTypeSelection("business")}
+              className="w-full py-3 bg-gradient-to-r from-indigo-800 to-indigo-600 rounded-lg flex items-center justify-center space-x-3 text-white"
+            >
               {/* Business Icon */}
               <FaBusinessTime className="text-white text-xl" />
               <span className="text-lg font-medium">For Business</span>
