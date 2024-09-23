@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Desktop12 from "./pages/Desktop12";
 import Desktop2 from "./pages/Desktop2";
 import Desktop11 from "./pages/Desktop11";
+import Desktop9 from "./pages/Desktop9";
+
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Desktop2 />} />
         <Route path="/desktop12" element={<HomePage />} />
         <Route path="/desktop11" element={<Desktop11 />} />
+        <Route path="/start-listing" element={<Desktop9 />} />
 
         <Route
           path="/product-details/:productId"
