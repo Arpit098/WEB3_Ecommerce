@@ -2,20 +2,20 @@ import React from "react";
 
 const ProductCard = ({ title, stock, price }) => {
   return (
-    <div className="w-full bg-[#F3F3F3] ">
-      <div className="flex items-center p-4 bg-[#F3F3F3]">
+    <div className=" bg-[#F3F3F3] ">
+      <div className="flex items-center p-4 bg-[#F3F3F3] max-md:p-1">
         {/* Gray Box for Image */}
         <div className="w-[75px] h-[80px] bg-[#8C8C8C] rounded"></div>
 
-        <div className="ml-4 flex-1">
+        <div className="ml-4 max-md:ml-2">
           <h3 className="text-sm font-medium">{title}</h3>
         </div>
 
-        <div className="text-sm font-medium text-gray-500 flex-1 text-center">
+        <div className="text-sm font-medium text-gray-500 mx-16 md:mx-32 text-center">
           {stock}
         </div>
 
-        <div className="text-sm font-medium text-gray-500 flex-1 text-right">
+        <div className="text-sm font-medium text-gray-500 text-right">
           {price}
         </div>
       </div>
@@ -26,10 +26,10 @@ const ProductCard = ({ title, stock, price }) => {
 const ProductList = ({ products, title }) => {
   return (
     <div className="relative flex flex-col w-1/2 p-6 bg-[#F3F3F3] rounded-md">
-      <span className="bg-white font-dm-sans text-[16px] font-medium leading-[20.83px] text-left">
+      <span className="bg-white font-dm-sans text-[16px] font-medium leading-[20.83px] text-left mx-11">
         {title}
       </span>
-      <div className="space-y-4">
+      <div className="p-8">
         {products.map((product, index) => (
           <ProductCard
             key={index}
@@ -57,9 +57,11 @@ const ProductsContainer = () => {
   ];
 
   return (
-    <div className="relative flex justify-between p-6 space-x-6 bg-[#F3F3F3] ">
-      <ProductList title="Trending" products={trendingProducts} />
-      <ProductList title="All Product" products={allProducts} />
+    <div className="bg-[#F3F3F3]">
+      <div className="relative flex justify-between bg-[#F3F3F3] max-w-[1400px] mx-auto max-md:flex-col">
+        <ProductList title="Trending" products={trendingProducts} />
+        <ProductList title="All Product" products={allProducts} />
+      </div>
     </div>
   );
 };

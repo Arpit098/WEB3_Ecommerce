@@ -3,7 +3,7 @@ import products from "./D12Data";
 
 const Desktop12Products = ({ view }) => {
   return (
-    <div className="mx-auto p-4 relative overflow-hidden ml-20 mr-20">
+    <div className="mx-auto p-4 relative overflow-hidden xl:ml-20 xl:mr-20">
       {/* Product Display Area */}
       <div
         className={`${
@@ -32,9 +32,12 @@ const Desktop12Products = ({ view }) => {
               }`}
             />
             {/* Product Info */}
-            <div className={`${view === "list" ? "text-left" : ""}`}>
+            <div className={`text-left`}>
               <h3 className="text-lg font-medium mb-2">{product.name}</h3>
-              <p className="text-[#434343] mb-1">Price: {product.price}</p>
+              <p className="text-[#434343] mb-1">
+                Price: <br />
+                {product.price}
+              </p>
             </div>
           </div>
         ))}
