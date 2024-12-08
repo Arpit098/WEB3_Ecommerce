@@ -13,7 +13,7 @@ const Desktop12 = () => {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <BackD12 />
       <SummaryBar />
       <FilterSearchBar setView={setView} />{" "}
