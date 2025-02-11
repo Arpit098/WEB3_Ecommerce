@@ -8,16 +8,17 @@ const PopularCollection = ({ details }) => {
   const handleNavigation = (id) => {
     navigate(`/boredApe`);
   };
+
   return (
-    <div className=" bg-black flex flex-col py-20 gap-5 max-md:justify-center max-md:w-full">
+    <div className="bg-black flex flex-col py-20 gap-5 max-md:justify-center max-md:w-full">
       <h2 className="text-white text-4xl text-left lg:w-[85vw] w-[75vw] mx-auto max-md:text-center">
         Popular Collection
       </h2>
-      <div className="flex flex-wrap justify-between items-center w-[90vw] mx-auto max-md:justify-center">
-        <button className="text-[#fff] w-9 h-9 text-3xl hidden md:block md:mr-3 xl:mr-0">
+      <div className="flex justify-between items-center w-[90vw] mx-auto max-md:justify-center">
+        <button className="text-[#fff] w-9 h-9 text-3xl hidden md:block md:mr-6 xl:mr-7">
           <FaCircleArrowLeft />
         </button>
-        <div className="flex flex-wrap justify-between lg:w-[85vw] w-[75vw] gap-5 py-3 mx-auto max-md:justify-center">
+        <div className="flex justify-between lg:w-[85vw] w-[75vw] gap-5 py-3 mx-auto max-md:justify-center">
           {details.map((collection, index) => (
             <div
               key={index}
@@ -35,7 +36,7 @@ const PopularCollection = ({ details }) => {
                   />
                 ))}
               </div>
-              <div className="pt-5 flex items-center justify-between  bg-[#121010E3] h-28 px-3">
+              <div className="pt-5 flex items-center justify-between bg-[#121010E3] h-28 px-3">
                 <h2 className="pl-2 text-white font-DM-Sans font-medium text-[16.13px] leading-[21px]">
                   {collection.title}
                 </h2>
@@ -46,7 +47,7 @@ const PopularCollection = ({ details }) => {
             </div>
           ))}
         </div>
-        <button className="text-white w-9 h-9 text-3xl hidden md:block ml-3 xl:ml-0">
+        <button className="text-white w-9 h-9 text-3xl hidden md:block ml-6 xl:ml-7">
           <FaCircleArrowRight />
         </button>
       </div>

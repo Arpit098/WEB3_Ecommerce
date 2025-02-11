@@ -29,7 +29,7 @@ export default function Navbar() {
       <nav className="sticky left-0 top-0 z-50 w-full h-[85px] bg-[#000000] opacity-85 backdrop-blur-3xl flex items-center justify-between px-6 md:px-8">
         {/* Logo */}
         <div className="text-[#FFFFFF] font-dm-sans font-bold text-[22px] leading-[29px]">
-          Lorel Ispum
+          E-Commerce Platform
         </div>
 
         {/* Search Box - Hidden on small screens */}
@@ -58,7 +58,7 @@ export default function Navbar() {
             Connect
           </button>
 
-          <TbGridDots className="w-[20px] md:w-[22px] h-[20px] md:h-[22px] text-[#FFFFFF]" />
+          {/* <TbGridDots className="w-[20px] md:w-[22px] h-[20px] md:h-[22px] text-[#FFFFFF]" /> */}
         </div>
       </nav>
 

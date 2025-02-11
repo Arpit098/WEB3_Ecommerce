@@ -13,10 +13,9 @@ const Home = () => {
   return (
     <div className="">
       <Navbar />
-      {/* <Herobg/>  */}
+      <Herobg/> 
       <PopularCollection details={PopularData} />
       <ProductsContainer />
-      <PopularCollection2 />
       <PopularCollection2 />
       {/* <Collection /> */}
       {/* <Card details={CardData} />  */}

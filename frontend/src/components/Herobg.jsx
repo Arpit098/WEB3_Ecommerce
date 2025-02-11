@@ -1,54 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import image from "../assets/image.png";
 import image1 from "../assets/image1.png";
 import image2 from "../assets/image2.png";
 
+const images = [image, image1, image2];
+
 const HeroBg = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="relative w-[1471px] h-[4843px] border-dashed border-2 border-[#9747FF] rounded-[5px]">
-      {/* Property 1=Default */}
-      <div className="absolute w-[1431px] h-[764px] left-[20px] top-[20px]">
-        {/* Frame 339 */}
-        <div className="flex flex-row items-center p-0 isolate absolute w-[4293px] h-[764px] left-0 top-0 bg-black">
-          {/* Image 70 */}
-          <div
-            className="w-[1431px] h-[764px] opacity-0 transform scale-x-[-1] flex-none order-0 flex-grow-0 z-0"
-            style={{ backgroundImage: `url(${image})` }}
-          />
-          {/* Image 71 */}
-          <div
-            className="w-[1431px] h-[760.81px] flex-none order-1 flex-grow-0 z-1"
-            style={{ backgroundImage: `url(${image1})` }}
-          />
-          {/* Image 64 */}
-          <div
-            className="w-[1431px] h-[761px] flex-none order-2 flex-grow-0 z-2"
-            style={{ backgroundImage: `url(${image2})` }}
-          />
-        </div>
-
-        {/* BG OVERLAY */}
-        <div className="absolute w-[2073px] h-[1091px] left-[-37px] top-[-68px] bg-black bg-opacity-90 shadow-inner shadow-[inset 0px 4px 20px rgba(0, 0, 0, 0.25)] backdrop-blur-[60px] z-3" />
-
-        {/* Slider */}
-        <div className="flex flex-row items-start p-0 gap-2.5 absolute w-[95px] h-[4px] left-[685px] top-[710px] z-4">
-          <div className="w-[25px] h-[4px] bg-white rounded-[4px] flex-none order-0 flex-grow-0" />
-          <div className="w-[25px] h-[4px] bg-[#878787] rounded-[4px] flex-none order-1 flex-grow-0" />
-          <div className="w-[25px] h-[4px] bg-[#878787] rounded-[4px] flex-none order-2 flex-grow-0" />
-        </div>
+    <div className="relative w-full h-screen overflow-hidden">
+      <div
+        className="flex transition-transform duration-1000 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((img, index) => (
+          <div key={index} className="w-full h-screen flex-none">
+            <img
+              src={img}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
       </div>
 
-      {/* Property 1=Variant2 */}
-      <div className="absolute w-[1431px] h-[764px] left-[20px] top-[804px]">
-        {/* Additional Frames and Images... */}
-      </div>
+      <div className="absolute inset-0 bg-black bg-opacity-60" />
 
-      {/* Property 1=Variant3 */}
-      <div className="absolute w-[1431px] h-[764px] left-[20px] top-[1588px]">
-        {/* Additional Frames and Images... */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex gap-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-6 h-1 rounded-lg ${
+              currentIndex === index ? "bg-white" : "bg-gray-500"
+            }`}
+          />
+        ))}
       </div>
-
-      {/* Continue with other variants... */}
     </div>
   );
 };
