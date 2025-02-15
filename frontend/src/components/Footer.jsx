@@ -51,7 +51,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline lg:text-right">
                   <p> Page</p>
                 </a>
               </li>
@@ -112,19 +112,19 @@ const Footer = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor exercitation ullamco laboris nisi ut aliquip.
           </p>
-          <div className="flex w-full justify-center lg:justify-start">
+          <div className="relative w-full sm:w-auto">
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-2 rounded-l-lg focus:outline-none text-blue-900 w-[70%] sm:w-auto"
+              className="p-2 rounded-lg focus:outline-none text-blue-900 w-full pr-12"
             />
-            <button className="bg-white text-blue-900 px-4 py-2 rounded-r-lg w-24">
+            <button className="absolute right-0 top-0 h-full bg-white text-blue-900 px-4 py-2 rounded-r-lg group">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                className="h-6 w-6"
+                className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-300"
               >
                 <path
                   strokeLinecap="round"

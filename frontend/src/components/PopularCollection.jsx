@@ -22,8 +22,8 @@ const PopularCollection = ({ details }) => {
           {details.map((collection, index) => (
             <div
               key={index}
-              className="w-72 h-[20rem] rounded-b-md overflow-hidden shadow-lg bg-black text-white border-b-[7px] border-b-[#9747FF] flex flex-col"
-              onClick={() => handleNavigation(collection)}
+              className="w-72 h-[20rem] rounded-b-md overflow-hidden shadow-lg bg-black text-white border-b-[7px] border-b-[#9747FF] flex flex-col transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => handleNavigation(collection.id)}
             >
               <div className="grid grid-cols-2 gap-1">
                 {collection.img.map((image, imgIndex) => (

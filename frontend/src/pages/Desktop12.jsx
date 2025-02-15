@@ -9,7 +9,7 @@ import SummaryBar from "../components/SummaryBar";
 import FilterSearchBar from "../components/FilterBar";
 
 const Desktop12 = () => {
-  const [view, setView] = useState("grid"); // Manage the view state
+  const [view, setView] = useState("grid");
 
   return (
     <div>
