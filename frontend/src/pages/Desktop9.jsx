@@ -29,32 +29,35 @@ const Desktop9 = () => {
           ></div>
           <div className="absolute inset-0 bg-black opacity-65"></div>
           <div className="md:w-[80%] w-[90%] md:mt-4 mt-7">
-            <div className="bg-white p-4 rounded-full relative z-10 w-4 h-4 grid place-content-center">
-              <FaArrowLeft />
-            </div>
             <br />
             <h2 className="text-white relative z-10 text-2xl font-bold tracking-wide">
               Welcome to the Web3.0 Ecommerce Business
             </h2>
             <p className="text-white relative z-10 mb-3 mt-2">
-              Here You can list any products with 0.01 eth each
+              Here You can list any products with <span className="italic">0.01 ETH</span> each
             </p>
             <div className="p-8 !bg-white z-50 relative rounded-lg !h-full mb-3">
               <form className="flex flex-col gap-4">
                 <div className="flex flex-col">
                   <input
                     type="file"
+                    accept="image/*"
                     onChange={handleFileChange}
                     className="border border-gray-300 p-2 rounded-md focus:outline-none"
                     ref={fileInputRef}
+                    style={{ appearance: 'none', MozAppearance: 'none' }}
                   />
                   {file && (
                     <button
                       type="button"
-                      onClick={handleClearFile}
-                      className="mt-2 bg-gray-500 text-white p-2 rounded-md hover:bg-gray-200 transition"
+                      onClick={() => {
+                        if (window.confirm("Do you really want to remove the current image?")) {
+                          handleClearFile();
+                        }
+                      }}
+                      className="mt-2 bg-gray-200 text-white p-2 rounded-md hover:bg-gray-500 transition"
                     >
-                      Clear
+                      <span className="font-bold">&#x2715;</span> Remove
                     </button>
                   )}
                 </div>
@@ -63,31 +66,40 @@ const Desktop9 = () => {
                   type="text"
                   placeholder="Title"
                   className="p-2 border border-gray-300 rounded-md focus:outline-none"
+                  style={{ appearance: 'none', MozAppearance: 'none', WebkitAppearance: 'none' }}
                 />
                 <p className="md:-mb-3">Description</p>
                 <textarea
                   placeholder="Description"
                   rows="4"
                   className="p-2 border border-gray-300 rounded-md focus:outline-none"
+                  style={{ appearance: 'none', MozAppearance: 'none', WebkitAppearance: 'none' }}
                 />
 
                 <p className="md:-mb-3">Stocks</p>
                 <input
                   type="number"
                   placeholder="Stocks"
+                  min="0"
                   className="p-2 border border-gray-300 rounded-md focus:outline-none"
+                  style={{ appearance: 'none', MozAppearance: 'none' }}
                 />
 
                 <p className="md:-mb-3">Prices</p>
                 <input
                   type="number"
                   placeholder="Prices"
+                  min="0"
                   className="p-2 border border-gray-300 rounded-md focus:outline-none"
+                  style={{ appearance: 'none', MozAppearance: 'none' }}
                 />
 
                 <button className="bg-blue-600 text-white font-semibold py-3 rounded-3xl hover:bg-blue-700 transition">
                   List Product
                 </button>
+                <button className="bg-green-600 text-white py-3 rounded-3xl hover:bg-green-700 transition" onClick={() => {
+                  window.location.href = "/";
+                }}> Return to Home</button>
               </form>
             </div>
           </div>

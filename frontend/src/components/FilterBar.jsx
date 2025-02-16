@@ -14,9 +14,9 @@ const FilterBar = ({ setView, view }) => {
       </div>
 
       {/* Search and Sort Section */}
-      <div className="flex items-center space-x-4 ">
+      <div className="flex items-center space-x-16 ">
         {/* Search */}
-        <div className="relative h-full">
+        <div className="relative">
           <input
             type="text"
             placeholder="Search item"
@@ -26,9 +26,9 @@ const FilterBar = ({ setView, view }) => {
         </div>
 
         {/* Price Sorting */}
-        <div className="relative flex items-center h-full">
+        <div className="relative flex items-center h-full left-8">
           <p className="text-sm text-[#333333] font-bold mr-2">Price</p>
-          <select className="border border-gray-300 rounded-lg p-2 px-3 h-full">
+          <select className="border border-gray-300 rounded-lg p-2 px-3 h-full hover:cursor-pointer">
             <option value="low-to-high">Low to high</option>
             <option value="high-to-low">High to low</option>
           </select>
@@ -39,7 +39,7 @@ const FilterBar = ({ setView, view }) => {
           <button
             onClick={() => setView("grid")}
             className={`p-2 border rounded-lg ${
-              view === "grid" ? "bg-[#E0E0E0]" : "bg-[#E0E0E0]"
+              view === "grid" ? "text-white" : "text-black"
             }`}
           >
             <FaTh className="h-5 w-5" />
@@ -47,7 +47,7 @@ const FilterBar = ({ setView, view }) => {
           <button
             onClick={() => setView("list")}
             className={`p-2 border rounded-lg ${
-              view === "list" ? "bg-[#E0E0E0]" : "bg-[#E0E0E0]"
+              view === "list" ? "text-white" : "text-black"
             }`}
           >
             <FaList className="h-5 w-5" />

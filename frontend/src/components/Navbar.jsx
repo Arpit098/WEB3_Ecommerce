@@ -29,7 +29,7 @@ export default function Navbar() {
       <nav className="sticky left-0 top-0 z-50 w-full h-[85px] bg-[#000000] opacity-85 backdrop-blur-3xl flex items-center justify-between px-6 md:px-8">
         {/* Logo */}
         <div className="text-[#FFFFFF] font-dm-sans font-bold text-[22px] leading-[29px]">
-          Lorel Ispum
+          E-Commerce Platform
         </div>
 
         {/* Search Box - Hidden on small screens */}
@@ -46,8 +46,10 @@ export default function Navbar() {
 
         {/* Icons and Button */}
         <div className="flex items-center space-x-4 md:space-x-6">
-          <AiOutlineHome className="w-6 h-6 md:w-7 md:h-7 text-[#FFFFFF]" />
-          <PiShoppingCart className="w-6 h-6 md:w-7 md:h-7 text-[#FFFFFF]" />
+          <AiOutlineHome className="w-6 h-6 md:w-7 md:h-7 text-[#FFF] hover:scale-110 transition-transform duration-300 hover:cursor-pointer" onClick={() => {
+            window.location.href = "/";
+          }}/>
+          <PiShoppingCart className="w-6 h-6 md:w-7 md:h-7 text-[#FFF] hover:scale-110 transition-transform duration-300 hover:cursor-pointer" />
 
           {/* Connect Button - Adjust padding and font size on mobile */}
           <button
@@ -58,7 +60,7 @@ export default function Navbar() {
             Connect
           </button>
 
-          <TbGridDots className="w-[20px] md:w-[22px] h-[20px] md:h-[22px] text-[#FFFFFF]" />
+          {/* <TbGridDots className="w-[20px] md:w-[22px] h-[20px] md:h-[22px] text-[#FFFFFF]" /> */}
         </div>
       </nav>
 
