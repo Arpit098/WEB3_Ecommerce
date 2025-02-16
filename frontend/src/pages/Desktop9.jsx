@@ -97,6 +97,9 @@ const Desktop9 = () => {
                 <button className="bg-blue-600 text-white font-semibold py-3 rounded-3xl hover:bg-blue-700 transition">
                   List Product
                 </button>
+                <button className="bg-green-600 text-white py-3 rounded-3xl hover:bg-green-700 transition" onClick={() => {
+                  window.location.href = "/";
+                }}> Return to Home</button>
               </form>
             </div>
           </div>

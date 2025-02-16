@@ -46,8 +46,10 @@ export default function Navbar() {
 
         {/* Icons and Button */}
         <div className="flex items-center space-x-4 md:space-x-6">
-          <AiOutlineHome className="w-6 h-6 md:w-7 md:h-7 text-[#FFFFFF]" />
-          <PiShoppingCart className="w-6 h-6 md:w-7 md:h-7 text-[#FFFFFF]" />
+          <AiOutlineHome className="w-6 h-6 md:w-7 md:h-7 text-[#FFF] hover:scale-110 transition-transform duration-300 hover:cursor-pointer" onClick={() => {
+            window.location.href = "/";
+          }}/>
+          <PiShoppingCart className="w-6 h-6 md:w-7 md:h-7 text-[#FFF] hover:scale-110 transition-transform duration-300 hover:cursor-pointer" />
 
           {/* Connect Button - Adjust padding and font size on mobile */}
           <button
