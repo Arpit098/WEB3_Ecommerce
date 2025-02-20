@@ -9,16 +9,15 @@ import PopularCollection2 from "../components/PopularCollection2";
 import Collection from "../components/Collection";
 import Herobg from "../components/Herobg";
 import Footer from "../components/Footer";
+import NewsLetter from "../components/NewsLetter";
+
 const Home = () => {
   return (
     <div className="">
       <Navbar />
       <Herobg/> 
-      <PopularCollection details={PopularData} />
       <ProductsContainer />
-      <PopularCollection2 />
-      {/* <Collection /> */}
-      {/* <Card details={CardData} />  */}
+      <NewsLetter />
       <Footer />
     </div>
   );
