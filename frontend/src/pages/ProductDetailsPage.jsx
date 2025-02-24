@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import products from "../components/ProdctDetailsData";
 import ProductDetailsTabs from "../components/ProductDetailsTabs";
 import { MdAddShoppingCart } from "react-icons/md";
+import Navbar from "../components/Navbar"
 
 const ProductDetailsPage = () => {
   const { productId } = useParams();
@@ -9,7 +10,7 @@ const ProductDetailsPage = () => {
 
   return (
     <>
-      {" "}
+      <Navbar />
       <div className="max-w-[1260px] mx-auto p-6 flex gap-8 max-md:flex-col">
         <div className="flex-none md:w-1/2">
           <div className="lg:p-6 border border-gray-200 rounded-lg flex justify-center items-center gap-2 shadow-xl max-md:h-[350px] md:max-lg:h-[500px] overflow-hidden md:min-h-[500px]">

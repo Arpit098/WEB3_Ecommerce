@@ -1,71 +1,84 @@
 import React from "react";
-import OIP from "../assets/OIP.jpeg"; // Image 1
-import OIP1 from "../assets/OIP (1).jpeg"; // Image 2
-import OIP2 from "../assets/OIP (2).jpeg"; // Image 3
+import OIP from "../assets/OIP.png";
+import OIP1 from "../assets/OIP (1).png";
+import OIP2 from "../assets/OIP (2).png";
 import Navbar from "../components/Navbar";
 
 const Desktop11 = () => {
   return (
-    <>
+    <div className="min-h-screen bg-[#E6F9FF]">
+      {/* Navbar */}
       <Navbar />
 
-      <div className="bg-[#E6F9FF] md:p-12 max-md:py-9 max-md:px-4 rounded-lg shadow-md flex justify-between md:items-start md:justify-between w-full max-w-7xl mx-auto space-y-8 md:space-y-0 md:space-x-8 h-screen">
-        {/* Text Section */}
-        <div className="text-left md:text-left max-w-lg">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-900 mb-6 leading-tight tracking-wide">
-            Welcome to <br className="max-md:hidden" />
-            Lorem Ipsum Web3 <br className="max-md:hidden" />
-            E-commerce Business
-          </h1>
-          <div className="text-gray-700 text-base md:text-lg mb-6">
-            <p className="max-md:mb-2">We’re thrilled to have you on board. </p>
-            <p>Your journey to reaching millions of customers starts here.</p>
-          </div>
-          <div>
-            <p className="text-xl font-medium text-[#1A237E] md:text-2xl md:font-semibold">
-              Get Started by Listing Your Products
-            </p>
-          </div>
-          <br />
-          <a
-            href="start-listing"
-            className="inline-block bg-gradient-to-b from-[#182073] to-[#2D3CD9] text-white font-semibold py-3 px-9 md:px-16 rounded-3xl hover:bg-blue-700 transition"
-          >
-            Start Listing
-          </a>
-        </div>
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-8 relative">
+        {/* Background Circle */}
+        <div className="absolute left-0 top-20 w-[500px] h-[500px] bg-white/50 rounded-full blur-xl"></div>
 
-        {/* Grid for overlapping images */}
-        <div className="grid grid-cols-1 grid-rows-1 relative w-full max-w-md md:max-w-lg h-auto max-lg:hidden">
-          {/* Image 1 */}
-          <div className=" row-start-1 col-start-1 z-30 transform translate-x-10 translate-y-8 hidden md:block">
-            <img
-              src={OIP}
-              alt="Image 1"
-              className="w-[316.55px] h-[316.55px] rounded-lg shadow-lg"
-            />
-          </div>
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
+          {/* Left Column - Text Content */}
+          <div className="z-10 pt-8">
+            <h1 className="text-[#1A236A] text-5xl font-semibold leading-tight mb-4">
+              Welcome to
+              <br />
+              <span className="text-[#1A236A]">Lorem Ipsum Web3</span>
+              <br />
+              E-commerce Business
+            </h1>
 
-          {/* Image 2 */}
-          <div className="row-start-1 col-start-1 z-20 transform -translate-x-40 translate-y-64 hidden md:block">
-            <img
-              src={OIP1}
-              alt="Image 2"
-              className="w-[258.55px] h-[258.55px] rounded-lg shadow-lg"
-            />
+            <div className="space-y-2 mb-6">
+              <p className="text-gray-600 text-sm">
+                We&apos;re thrilled to have you on board.
+              </p>
+              <p className="text-gray-600 text-sm">
+                Your journey to reaching millions of customers starts here.
+              </p>
+            </div>
+
+            <div className="mb-6">
+              <h2 className="text-[#1A237E] text-xl font-medium">
+                Get Started by Listing Your Products
+              </h2>
+            </div>
+
+            <button className="flex items-center px-4 md:px-6 py-2 md:py-3 max-md:hidden bg-gradient-to-b from-[#1b1873] to-[#2D3CD9] shadow-[inset_0px_4px_10px_rgba(0,0,0,0.25)] rounded-[24px] text-[#FFFFFF] font-dm-sans font-medium text-[14px] md:text-[16px] leading-[21px]">
+              <a
+                href="start-listing"
+              >
+                Start Listing
+              </a>
+            </button>
           </div>
 
-          {/* Image 3 */}
-          <div className="row-start-1 col-start-1 z-10 transform translate-x-40 translate-y-72 hidden md:block">
-            <img
-              src={OIP2}
-              alt="Image 3"
-              className="w-[258.55px] h-[258.55px] rounded-lg shadow-lg"
-            />
+          {/* Right Column - Images */}
+          <div className="relative h-[600px] hidden lg:block">
+            {/* Stacked Images with Polaroid Effect */}
+            <div className="absolute top-10 -translate-x-20 right-0 w-[240px] transform z-30">
+              <div className="bg-white p-1 shadow-xl">
+                <img src={OIP} alt="Character" className="w-full h-auto" />
+              </div>
+            </div>
+
+            <div className="absolute top-40 -translate-x-4 w-[240px] transform z-20">
+              <div className="bg-white p-1 shadow-xl">
+                <img src={OIP1} alt="Monkey" className="w-full h-auto" />
+              </div>
+            </div>
+
+            <div className="absolute top-40 translate-y-10 right-0 w-[240px] transform z-10">
+              <div className="bg-white p-1 shadow-2xl">
+                <img
+                  src={OIP2}
+                  alt="Character 2"
+                  className="w-[480px] h-[240px]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

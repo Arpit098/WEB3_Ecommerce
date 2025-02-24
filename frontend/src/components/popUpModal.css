@@ -1,0 +1,81 @@
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.wallet-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wallet-option:hover {
+    background: #f5f5f5;
+}
+
+.wallet-option img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.wallet-option {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    width: 100%;
+    margin: 8px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+}
+
+.wallet-option img {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    object-fit: contain;
+}
+
+.wallet-option span {
+    font-size: 16px;
+}

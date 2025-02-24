@@ -33,7 +33,18 @@ const HeroBg = () => {
         ))}
       </div>
 
-      <div className="absolute inset-0 bg-black bg-opacity-60" />
+      <div className="absolute inset-0 bg-black bg-opacity-70" />
+
+      {/* Added text overlay */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <h5 className="text-white text-4xl md:text-5xl translate-y-16 text-center px-4 max-w-4xl font-['DM_Sans']">
+          Discover <br />A new era of ecommerce powered by{" "}
+          <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+            blockchain
+          </span>{" "}
+          technology
+        </h5>
+      </div>
 
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex gap-2">
         {images.map((_, index) => (
