@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import truck from "../assets/truck.gif"
 
 const PAGE_SIZE = 6;
 
@@ -52,7 +53,7 @@ const ProductList = ({ products, title }) => {
 
   return (
     <div className="bg-[#F3F3F3] p-6 rounded-md">
-      <h2 className="text-lg font-medium mb-4">{title}</h2>
+      <h2 className="text-2xl font-medium mb-4">{title} <span className="text-sm text-gray-500 font-normal">Delivery Free for 1 month <img src={truck} alt="Delivery Truck" className="w-8 h-8 -translate-y-1 inline-block mr-2"/></span></h2>
       {/* Search and Filter Controls */}
       <div className="flex gap-4 mb-4">
         <input
@@ -93,13 +94,13 @@ const ProductList = ({ products, title }) => {
 
 const ProductsContainer = () => {
   const allProducts = [
-    { title: "Product name", stock: 55, price: "0.55ETH" },
-    { title: "Product name", stock: 41, price: "0.35ETH" },
-    { title: "Product name", stock: 955, price: "0.95ETH" },
-    { title: "Product name", stock: 101, price: "1.05ETH" },
-    { title: "Product name", stock: 202, price: "1.15ETH" },
-    { title: "Product name", stock: 303, price: "1.25ETH" },
-    { title: "Product name", stock: 404, price: "1.35ETH" },
+    { title: "Product name", stock: 55, price: "0.55 DOGE" },
+    { title: "Product name", stock: 41, price: "0.35 DOGE" },
+    { title: "Product name", stock: 955, price: "0.95 DOGE" },
+    { title: "Product name", stock: 101, price: "1.05 DOGE" },
+    { title: "Product name", stock: 202, price: "1.15 DOGE" },
+    { title: "Product name", stock: 303, price: "1.25 DOGE" },
+    { title: "Product name", stock: 404, price: "1.35 DOGE" },
   ];
 
   return (
