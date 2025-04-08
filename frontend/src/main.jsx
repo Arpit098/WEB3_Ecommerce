@@ -6,8 +6,10 @@ import { ContractProvider } from "./Context/ContractContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ContractProvider>
-      <App />
-    </ContractProvider>
+    <Provider store={store}>
+      <ContractProvider>
+        <App />
+      </ContractProvider>
+    </Provider>
   </StrictMode>
 );
